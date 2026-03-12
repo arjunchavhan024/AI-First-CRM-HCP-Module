@@ -7,6 +7,25 @@
   --radius-xl: 12px;
 }
 
+/* Custom Component Classes using standard CSS + Tailwind @apply where safe */
+@layer components {
+  .card {
+    @apply bg-white border border-slate-200 rounded-(--radius-xl) shadow-sm;
+  }
+  
+  .btn-primary {
+    @apply bg-blue-600 text-white px-4 py-2 rounded-lg font-medium hover:bg-blue-700 transition-colors shadow-sm;
+  }
+
+  .input-field {
+    @apply w-full px-3 py-2 border border-slate-200 rounded-lg focus:ring-2 focus:ring-blue-600/20 focus:border-blue-600 outline-none transition-all;
+  }
+
+  .label {
+    @apply block text-sm font-semibold text-slate-700 mb-1.5;
+  }
+}
+
 :root {
   font-family: var(--font-inter);
 }
@@ -15,22 +34,3 @@ body {
   background-color: var(--color-background);
   color: #1E293B;
 }
-
-@layer components {
-  .card {
-    @apply bg-white border border-slate-200 rounded-xl shadow-sm;
-  }
-  
-  .btn-primary {
-    @apply bg-primary text-white px-4 py-2 rounded-lg font-medium hover:bg-blue-700 transition-colors shadow-sm;
-  }
-
-  .input-field {
-    @apply w-full px-3 py-2 border border-slate-200 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all;
-  }
-
-  .label {
-    @apply block text-sm font-semibold text-slate-700 mb-1.5;
-  }
-}
-
